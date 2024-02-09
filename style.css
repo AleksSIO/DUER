@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    
+}
+body{
+    background: #141526;
+    overflow: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+/* Resultat Vrai*/
+.block-p{
+    margin: 0 auto;
+    height: 80vh;
+    width: 70%;
+    background-color: white;
+    border-radius: 25px;
+    padding: 15px;
+    margin-top: 70px;
+    text-align: center;
+    align-items: center;
+}
+.p1{
+    font-size: 52px;
+    margin-bottom: 50px;
+}
+.p2{
+    font-size: 20px;
+}
+
+.titres-accueil{
+  display: flex;
+}
+
+.logo-accueil{
+  display: flex;
+  margin-left: 5%;
+}
+
+.acces-accueil{
+  display: flex;
+  position: absolute;
+  top: 40%;
+  left: 55%;
+}
+
+.logo{
+  width: 500px;
+}
+
+@media (max-width: 1250px) {
+  .logo {
+    width: 250px;
+  }
+
+  .logo-accueil{
+    margin-left: 27%;
+    margin-bottom: 10%;
+  }
+}
+/* Resultat Faux */
+
+.block-f{
+    margin: 0 auto;
+    height: 400px;
+    width: 40%;
+    background-color: white;
+    border-radius: 25px;
+    padding: 15px;
+    margin-top: 70px;
+    text-align: center;
+}
+.p3{
+    font-size: 24px;
+    margin-bottom: 90px;
+}
+.p4{
+    font-size: 18px;
+}
+
+/* button */
+
+/* Page d'acceuil */
+
+.card{
+    margin: 20px;
+}
+.block-c{
+    margin-top: 80px;
+}
+
+.titre-1{
+    margin: 0 auto;
+    
+}
+.titre-1 p{
+    text-align: center;
+
+}
+
+/* Login */
+.form-login {
+  display: flex;
+  position: relative;
+}
+
+.form-login input{
+  width: 400px;
+  height: 50px;
+  padding: 0 10px;
+  border: 1px solid black;
+}
+
+.form-login input:hover,
+.form-login input:focus {
+  outline: none;
+  border: 1px solid black;
+}
+
+.submit-login{
+  border-radius: 20px;
+  border: none;
+  background: #93c90e;
+  width: 425px;
+  height: 50px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.submit-login:hover{
+  background: #9ad10f;
+  cursor: pointer;
+}
+
+.boutons-accueil{
+  display: flex;
+  position: absolute;
+  top: 105%;
+  width: 500px;
+}
+
+.input-container{
+  display: flex;
+  margin-bottom: 5%;
+}
+
+.form-button{
+  border-radius: 20px;
+  border: none;
+  background: #f7a739;
+  width: 425px;
+  height: 50px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.form-button:hover{
+  background: #f6b253;
+  cursor: pointer;
+}
+
+.pass-ft{
+  display: flex;
+  color: blue;
+  font-size: 13px;
+  margin-bottom: 5%;
+}
+
+.nav-pg {
+  display: block;
+  position: absolute;
+  top: 87%;
+  left: 48%;
+}
+
+.pg {
+  background: #575757;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.pg-selected{
+  background: #f7a739;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+#back {
+  border-radius: 20px;
+  border: none;
+  background: #f7a739;
+  width: 170px;
+  height: 30px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#back:hover{
+  cursor: pointer;
+}
+
+.back-pg {
+  display: block;
+  position: absolute;
+  top: 86%;
+  left: 16%;
+}
+
+#next {
+  border-radius: 20px;
+  border: none;
+  background: #f7a739;
+  width: 150px;
+  height: 30px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#next:hover{
+  cursor: pointer;
+}
+
+.next-pg {
+  display: block;
+  position: absolute;
+  top: 86%;
+  left: 75%;
+}
+
+.pg-1 {
+  background: #93c90e;
+  width: 500px;
+  display: block;
+  position: relative;
+  margin-left: 28%;
+  border-radius: 20px;
+  color: white;
+}
+
+
+.pg-1 input {
+  width: 400px;
+  height: 50px;
+  padding: 0 10px;
+  border: 1px solid black;
+  margin: 10px 50px 20px 38px;
+}
+
+.pg-1 input:hover,
+.pg-1 input:focus {
+  outline: none;
+  border: 1px solid black;
+}
