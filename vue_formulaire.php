@@ -54,12 +54,13 @@ if (isset($_SESSION['loggedin'])){
         <div class="formulaire pg-1 visible">
             <form method="post" action="">
             <label for="nom">Nom</label>
-            <input type="text" name="nom" id="nom" placeholder="Entrez votre nom">
+            <input type="text" name="nom" id="nom" class="nom" placeholder="Entrez votre nom">
             <label for="prenom">Prénom</label>
-            <input type="text" name="prenom" id="prenom" placeholder="Entrez votre prénom">
+            <input type="text" name="prenom" id="prenom" class="prenom" placeholder="Entrez votre prénom">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Entrez votre email">
+            <input type="email" name="email" id="email" class="email" placeholder="Entrez votre email">
         </div>
+
         <div class="formulaire pg-2 hidden">
                           <label for="inputState">Unité de travail (salle):</label>
                           <select id="inputState" name="salle" class="form-control">
@@ -243,7 +244,7 @@ if (isset($_SESSION['loggedin'])){
         </div>
 
         <div class="next-pg">
-        <button id="next">Suivant 🡲</button>
+        <button id="next" disabled>Suivant 🡲</button>
         </div>
         
     </div>

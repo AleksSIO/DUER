@@ -238,6 +238,11 @@ a{
   font-size: 12px;
 }
 
+#next:disabled, 
+#next[disabled] {
+  background: #313131;
+}
+
 #next:hover{
   cursor: pointer;
 }
@@ -250,26 +255,66 @@ a{
 }
 
 .pg-1 {
-  background: #93c90e;
   width: 500px;
   display: block;
   position: relative;
   margin-left: 28%;
   border-radius: 20px;
-  color: white;
+  color: black;
+  z-index: 2;
 }
 
 
-.pg-1 input {
+.pg-1 .nom,
+.pg-1 .prenom,
+.pg-1 .email {
   width: 400px;
   height: 50px;
   padding: 0 10px;
-  border: 1px solid black;
+  border: 2px solid black;
   margin: 10px 50px 20px 38px;
 }
 
-.pg-1 input:hover,
-.pg-1 input:focus {
+.pg-1 .nom:hover,
+.pg-1 .prenom:hover,
+.pg-1 .email:hover,
+.pg-1 .nom:focus,
+.pg-1 .prenom:focus,
+.pg-1 .email:focus {
   outline: none;
-  border: 1px solid black;
+  border: 2px solid black;
 }
+
+.pg-1 .nom.valid-input,
+.pg-1 .prenom.valid-input,
+.pg-1 .email.valid-input {
+  border: 2px solid rgb(16, 221, 1);
+}
+
+.pg-1 .nom.valid-input:hover,
+.pg-1 .prenom.valid-input:hover,
+.pg-1 .email.valid-input:hover,
+.pg-1 .nom.valid-input:focus,
+.pg-1 .prenom.valid-input:focus,
+.pg-1 .email.valid-input:focus {
+  outline: none;
+  border: 2px solid rgb(16, 221, 1);
+}
+
+.pg-1 .nom.error-input,
+.pg-1 .prenom.error-input,
+.pg-1 .email.error-input {
+  border: 2px solid red;
+}
+
+.pg-1 .nom.error-input:hover,
+.pg-1 .prenom.error-input:hover,
+.pg-1 .email.error-input:hover,
+.pg-1 .nom.error-input:focus,
+.pg-1 .prenom.error-input:focus,
+.pg-1 .email.error-input:focus {
+  outline: none;
+  border: 2px solid red;
+}
+
+
