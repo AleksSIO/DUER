@@ -54,11 +54,11 @@ if (isset($_SESSION['loggedin'])){
         <div class="formulaire pg-1 visible">
             <form method="post" action="">
             <label for="nom">Nom</label>
-            <input type="text" name="nom" placeholder="Entrez votre nom">
+            <input type="text" name="nom" id="nom" placeholder="Entrez votre nom">
             <label for="prenom">Prénom</label>
-            <input type="text" name="prenom" placeholder="Entrez votre prénom">
+            <input type="text" name="prenom" id="prenom" placeholder="Entrez votre prénom">
             <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Entrez votre email">
+            <input type="email" name="email" id="email" placeholder="Entrez votre email">
         </div>
         <div class="formulaire pg-2 hidden">
                           <label for="inputState">Unité de travail (salle):</label>
@@ -248,5 +248,6 @@ if (isset($_SESSION['loggedin'])){
         
     </div>
     <script src="scripts/form_scroll.js"></script>
+    <script src="scripts/verif_form.js"></script>
 </body>
 </html>
