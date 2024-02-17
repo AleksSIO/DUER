@@ -62,23 +62,23 @@ if (isset($_SESSION['loggedin'])){
         </div>
 
         <div class="formulaire pg-2 hidden">
-                          <label for="inputState">Unité de travail (salle):</label>
-                          <select id="inputState" name="salle" class="salle">
+                          <label for="salle">Unité de travail (salle):</label>
+                          <select id="salle" name="salle" class="salle">
                             <option selected>Choisir...</option>
                             <?php foreach ($salles as $salle): ?>
                             <option value="<?= $salle['salle'] ?>"><?= $salle['salle'] ?></option>
                             <?php endforeach; ?>
                           </select>
                 
-                          <label for="inputAddress">Localisation:</label>
-                          <input type="text" class="lieu" id="inputAddress" name="emplacement_precis" placeholder="Précision spaciale dans la pièce">
+                          <label for="lieu">Localisation:</label>
+                          <input type="text" class="lieu" id="lieu" name="emplacement_precis" placeholder="Précision spaciale dans la pièce">
                             
-                          <label for="inputAddress">Situation dangereuse:</label>
+                          <label for="situation">Situation dangereuse:</label>
                             
-                          <input type="text" class="situation" id="inputAddress" name="precis" placeholder="Donner une Précision (ex:Interrupteur côté porte...)">
+                          <input type="text" class="situation" id="situation" name="precis" placeholder="Donner une Précision (ex:Interrupteur côté porte...)">
                 
-                          <label for="inputState">Famille de risque:</label>
-                          <select id="inputState" name="famille" class="famille">
+                          <label for="famille">Famille de risque:</label>
+                          <select id="famille" name="famille" class="famille">
                             <option selected>Choisir...</option>
                             <?php foreach ($familles as $famille): ?>
                             <option value="<?= $famille['famille'] ?>"><?= $famille['famille'] ?></option>
@@ -87,6 +87,7 @@ if (isset($_SESSION['loggedin'])){
         
         </div>
         <div class="formulaire pg-3 hidden">
+        <div class="block-1">
         <h3>Personne exposées</h3>
                           <table>
                             <thead>
@@ -174,7 +175,8 @@ if (isset($_SESSION['loggedin'])){
                                 </tr>
                             </tbody>
                             </table>
-
+                            </div>
+                            <div class="block-2">
                             <h3>Probabilité</h3>
                           <table>
                             <thead>
@@ -229,9 +231,12 @@ if (isset($_SESSION['loggedin'])){
                               </tr>
                             </tbody>
                           </table>
+                            </div>
                           </form>      
         </div>
         <div class="formulaire pg-4 hidden">
+          <h3>Photos</h3>
+          <input type="file" name='files[]' multiple>
         </div>
         <div class="back-pg">
         <button class="active" id="back">🡰 Retour à l'accueil</button>
@@ -244,7 +249,7 @@ if (isset($_SESSION['loggedin'])){
         </div>
 
         <div class="next-pg">
-        <button id="next" disabled>Suivant 🡲</button>
+        <button id="next">Suivant 🡲</button>
         </div>
         
     </div>

@@ -238,11 +238,6 @@ a{
   font-size: 12px;
 }
 
-#next:disabled, 
-#next[disabled] {
-  background: #313131;
-}
-
 #next:hover{
   cursor: pointer;
 }
@@ -337,6 +332,14 @@ a{
   margin: 10px 50px 20px 38px;
 }
 
+.pg-2 .lieu:hover,
+.pg-2 .situation:hover,
+.pg-2 .lieu:focus,
+.pg-2 .situation:focus{
+  outline: none;
+  border: 2px solid black;
+}
+
 .pg-2 .salle,
 .pg-2 .famille {
   width: 425px;
@@ -352,6 +355,79 @@ a{
   background-position: right 12px center; 
   background-size: 15px; 
 
+}
+
+.pg-2 .salle.valid-input,
+.pg-2 .lieu.valid-input,
+.pg-2 .situation.valid-input,
+.pg-2 .famille.valid-input {
+  border: 2px solid rgb(16, 221, 1);
+}
+
+.pg-2 .salle.valid-input:hover,
+.pg-2 .lieu.valid-input:hover,
+.pg-2 .situation.valid-input:hover,
+.pg-2 .famille.valid-input:hover,
+.pg-2 .salle.valid-input:focus,
+.pg-2 .lieu.valid-input:focus,
+.pg-2 .situation.valid-input:focus,
+.pg-2 .famille.valid-input:focus{
+  outline: none;
+  border: 2px solid rgb(16, 221, 1);
+}
+
+.pg-2 .salle.error-input,
+.pg-2 .lieu.error-input,
+.pg-2 .situation.error-input,
+.pg-2 .famille.error-input{
+  border: 2px solid red;
+}
+
+.pg-2 .salle.error-input:hover,
+.pg-2 .lieu.error-input:hover,
+.pg-2 .situation.error-input:hover,
+.pg-2 .famille.error-input:hover,
+.pg-2 .salle.error-input:focus,
+.pg-2 .lieu.error-input:focus,
+.pg-2 .situation.error-input:focus,
+.pg-2 .famille.error-input {
+  outline: none;
+  border: 2px solid red;
+}
+
+.pg-3 .block-1{
+  width: 270px;
+  display: block;
+  top: 27%;
+  left: 25%;
+  position: absolute;
+  border-radius: 20px;
+  color: black;
+  z-index: 2;
+}
+
+.pg-3 .block-2 {
+  width: 200px;
+  display: block;
+  margin-left: 5%;
+  top: 29%;
+  left: 55%;
+  position: absolute;
+  border-radius: 20px;
+  color: black;
+  z-index: 2;
+}
+
+.pg-4 {
+  width: 270px;
+  display: block;
+  top: 35%;
+  left: 42%;
+  position: absolute;
+  border-radius: 20px;
+  color: black;
+  font-size: 26px;
+  z-index: 2;
 }
 
 
