@@ -63,7 +63,7 @@ if (isset($_SESSION['loggedin'])){
 
         <div class="formulaire pg-2 hidden">
                           <label for="inputState">Unité de travail (salle):</label>
-                          <select id="inputState" name="salle" class="form-control">
+                          <select id="inputState" name="salle" class="salle">
                             <option selected>Choisir...</option>
                             <?php foreach ($salles as $salle): ?>
                             <option value="<?= $salle['salle'] ?>"><?= $salle['salle'] ?></option>
@@ -71,14 +71,14 @@ if (isset($_SESSION['loggedin'])){
                           </select>
                 
                           <label for="inputAddress">Localisation:</label>
-                          <input type="text" class="form-control" id="inputAddress" name="emplacement_precis" placeholder="Précision spaciale dans la pièce">
+                          <input type="text" class="lieu" id="inputAddress" name="emplacement_precis" placeholder="Précision spaciale dans la pièce">
                             
                           <label for="inputAddress">Situation dangereuse:</label>
                             
-                          <input type="text" class="form-control" id="inputAddress" name="precis" placeholder="Donner une Précision (ex:Interrupteur côté porte...)">
+                          <input type="text" class="situation" id="inputAddress" name="precis" placeholder="Donner une Précision (ex:Interrupteur côté porte...)">
                 
                           <label for="inputState">Famille de risque:</label>
-                          <select id="inputState" name="famille" class="form-control">
+                          <select id="inputState" name="famille" class="famille">
                             <option selected>Choisir...</option>
                             <?php foreach ($familles as $famille): ?>
                             <option value="<?= $famille['famille'] ?>"><?= $famille['famille'] ?></option>
