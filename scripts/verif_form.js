@@ -120,6 +120,29 @@ function verifFamille() {
     }
 }
 
+function verifForm() {
+    if (verifNom() && verifPrenom() && verifEmail() && verifSalle() && verifFamille() && verifSituation() && verifLieu())
+    {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+nextBtn.addEventListener('click', function(event) {
+    if (nextBtn.textContent == 'Suivant 🡲') {
+        nextBtn.removeAttribute('type'); // Enlève le type "submit" pour empêcher la soumission
+    } else {
+        if (!verifForm()) {
+            event.preventDefault(); // Empêche la soumission du formulaire si les validations ne sont pas passées
+        } else {
+            nextBtn.setAttribute('type', 'submit');
+            console.log(nextBtn.getAttribute());
+            document.querySelector('.myform').submit();
+        }
+    }
+});
+
 function stateSwitch(index, state) {
     switch (index) {
         case 'nom':
