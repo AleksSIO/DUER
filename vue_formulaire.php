@@ -52,7 +52,7 @@ if (isset($_SESSION['loggedin'])){
         <p class="p1">Formulaire</p>
         </div>
         <div class="formulaire pg-1 visible">
-            <form class="myform" method="post" action="controleur.php" enctype='multipart/form-data'>
+            <form id="myform" method="post" action="controleur.php" enctype='multipart/form-data'>
             <input type="hidden" name="mode" value="1">    
             <label for="nom">Nom</label>
             <input type="text" name="nom" id="nom" class="nom" placeholder="Entrez votre nom">

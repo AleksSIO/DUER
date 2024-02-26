@@ -10,6 +10,7 @@ const select_salle = document.querySelector('#salle');
 const input_lieu = document.querySelector('#lieu');
 const input_situation = document.querySelector('#situation');
 const select_famille = document.querySelector('#famille');
+const form = document.querySelector('#myform');
 
 input_nom.addEventListener('input', verifNom);
 input_prenom.addEventListener('input', verifPrenom);
@@ -140,7 +141,7 @@ nextBtn.addEventListener('click', function(event) {
         } else {
             nextBtn.setAttribute('type', 'submit');
             console.log('hello2');
-            document.querySelector('.myform').submit();
+            form.submit();
         }
     }
 });
