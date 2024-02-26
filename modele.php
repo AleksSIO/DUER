@@ -273,7 +273,7 @@ function inserer_risque( $etat,
 	$sql = "INSERT INTO risques ( etat, 
                                   date_creation, 
                                   date_derniere_modification, 
-                                  Id_images, 
+                                  Id_Photos, 
                                   Id_Utilisateur, 
                                   Id_Situation_dangereuse, 
                                   Id_Probabilite, 
@@ -322,7 +322,7 @@ function inserer_image($images)
     // Count total files
     $countfiles = count($_FILES['files']['name']);   
     // Prepared statement
-    $sql = "INSERT INTO images (name,image) VALUES(?,?)";
+    $sql = "INSERT INTO photos (name,image) VALUES(?,?)";
     $stmt = $bdd->prepare($sql);
     $count = 0;
     // Loop all files

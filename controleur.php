@@ -1,7 +1,6 @@
 <?php
 session_start();
 $mode=$_POST["mode"];
-$action=$_GET["action"];
 
 include 'modele.php';
 
@@ -26,7 +25,7 @@ switch ($mode) {
 		$probabilite=$_POST['probabilite'];
 		$complexiteDeResolution=$_POST['complexite_de_resolution'];
 		$solutionOnereuse=$_POST['solution_onereuse'];
-		$images=$_POST['file'];
+		$images=$_FILES['files'];
 
 		if(    empty($nom) 
 			&& empty($prenom) 

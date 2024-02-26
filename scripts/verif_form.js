@@ -10,7 +10,7 @@ const select_salle = document.querySelector('#salle');
 const input_lieu = document.querySelector('#lieu');
 const input_situation = document.querySelector('#situation');
 const select_famille = document.querySelector('#famille');
-const form = document.querySelector('#myform');
+const myform = document.querySelector('form[name="myform"]');
 
 input_nom.addEventListener('input', verifNom);
 input_prenom.addEventListener('input', verifPrenom);
@@ -130,21 +130,39 @@ function verifForm() {
     }
 }
 
+let formSubmitted = false;
+
 nextBtn.addEventListener('click', function(event) {
     if (nextBtn.textContent == 'Suivant 🡲') {
         nextBtn.removeAttribute('type');
-        console.log('hello'); // Enlève le type "submit" pour empêcher la soumission
-    } else {
+    } else if (nextBtn.textContent == 'Terminer ✔') {
         if (!verifForm()) {
             event.preventDefault();
-            console.log('hello'); // Empêche la soumission du formulaire si les validations ne sont pas passées
         } else {
             nextBtn.setAttribute('type', 'submit');
-            console.log('hello2');
-            form.submit();
+            if (formSubmitted) {
+                submitForm(myform);
+            }
         }
     }
 });
+
+myform.addEventListener('submit', function(event) {
+    if (!formSubmitted) {
+        event.preventDefault(); // Empêche la soumission automatique si le formulaire n'est pas prêt
+    }
+});
+
+nextBtn.addEventListener('mousedown', function(event) {
+    if (nextBtn.textContent === 'Terminer ✔') {
+        formSubmitted = true;
+    }
+});
+
+
+function submitForm(frm) {
+    HTMLFormElement.prototype.submit.call(frm);
+}
 
 function stateSwitch(index, state) {
     switch (index) {
