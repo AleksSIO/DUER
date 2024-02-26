@@ -131,13 +131,15 @@ function verifForm() {
 
 nextBtn.addEventListener('click', function(event) {
     if (nextBtn.textContent == 'Suivant 🡲') {
-        nextBtn.removeAttribute('type'); // Enlève le type "submit" pour empêcher la soumission
+        nextBtn.removeAttribute('type');
+        console.log('hello'); // Enlève le type "submit" pour empêcher la soumission
     } else {
         if (!verifForm()) {
-            event.preventDefault(); // Empêche la soumission du formulaire si les validations ne sont pas passées
+            event.preventDefault();
+            console.log('hello'); // Empêche la soumission du formulaire si les validations ne sont pas passées
         } else {
             nextBtn.setAttribute('type', 'submit');
-            console.log(nextBtn.getAttribute());
+            console.log('hello2');
             document.querySelector('.myform').submit();
         }
     }
