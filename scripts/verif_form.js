@@ -10,7 +10,6 @@ const select_salle = document.querySelector('#salle');
 const input_lieu = document.querySelector('#lieu');
 const input_situation = document.querySelector('#situation');
 const select_famille = document.querySelector('#famille');
-const nextBtn = document.querySelector('#next');
 
 input_nom.addEventListener('input', verifNom);
 input_prenom.addEventListener('input', verifPrenom);
