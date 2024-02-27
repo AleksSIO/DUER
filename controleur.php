@@ -100,15 +100,24 @@ switch ($mode) {
 		}
 		else // $nom et $prenom sont corrects  
 		{
-			$nb_lignes=verif_connexion($mail, $pass);
-			if($nb_lignes > 0) 
+			$compte=verif_connexion($mail, $pass);
+			if($compte && $compte['role'] == 'admin') 
 			{
 				// cette variable indique que l'authentification a réussi
-				header("Location:vue_formulaire.php"); // page de confirmation
-				exit(); // interruption de la fonction après redirection
+				$_SESSION['loggedin'] = true;
+				header("Location:vue_admin.php"); // page de confirmation
+				 // interruption de la fonction après redirection
+			}
+			else if($compte && $compte['role'] == 'util')
+			{
+				// cette variable indique que l'authentification a réussi
+				$_SESSION['loggedin'] = true;
+				header("Location:vue_utilisateur.php"); // page de confirmation
+				 // interruption de la fonction après redirection
 			}
 			else // il y a eu une erreur
 			{
+				$_SESSION['loggedin'] = false;
 				$message_erreur="Erreur lors de la verification des données dans la base de donnee.";
 				// redirection vers la page vue erreur
 				header("Location: vue_erreur.php?erreur=$message_erreur");

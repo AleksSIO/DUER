@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Erreur | DUERP</title>
+    <title>Page Innaccessible | DUERP</title>
     <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
@@ -27,12 +27,7 @@
 <body>
     <div class="block-f">
         <p class="p3">❌ Malheureusement ❌</p>
-        <p class="p4">Les informations n'ont pas ete transmis à la base de donnees.</p>
-        <?php
-            $erreur=$_GET["erreur"];
-            echo "<p class='erreur'>$erreur</p>";
-        ?>
-        <!-- Lien pour retourner à la page initiale -->
+        <p class="p4">Cette page est innaccessible si vous n'êtes pas connecté.</p>
         <a href="vue_acceuil.php">Retour accueil</a>
     </div>
 </body>

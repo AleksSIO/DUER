@@ -373,9 +373,9 @@ function verif_connexion($mail, $pass)
         $_SESSION['loggedin'] = true;
         $_SESSION['utilisateur_id'] = $utilisateurId;
         $_SESSION['nom'] = $nomUtilisateur;
-        $count = $stmt->rowCount(); // compte le nombre de lignes affectées (normalement 1 ligne insérée)
+        $comptes=$data;
 	}
-	return $count;
+	return $comptes;
 }
 
 function select_image()
