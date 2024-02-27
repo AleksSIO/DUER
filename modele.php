@@ -363,8 +363,6 @@ function verif_connexion($mail, $pass)
 	if(!$data=$stmt->fetch(PDO::FETCH_ASSOC)) 
 	{	
 		$message_erreur="Impossible d'executer la requete: $sql  ";
-		echo $message_erreur;
-		die();
 		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}

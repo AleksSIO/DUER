@@ -29,8 +29,14 @@
         <p class="p3">❌ Malheureusement ❌</p>
         <p class="p4">Les informations n'ont pas été transmises à la base de donnees.</p>
         <?php
-            $erreur=$_GET["erreur"];
-            echo "<p class='erreur'>$erreur</p>";
+            $erreur=isset($_GET["erreur"]) ? $_GET["erreur"] : null; 
+            if($erreur){
+                echo "<p class='erreur'>$erreur</p>";
+            }
+            else {
+                echo "<p class='erreur'>Aucune erreur à signaler</p>";
+            }
+            
         ?>
         <!-- Lien pour retourner à la page initiale -->
         <a href="index.php" class="retour">Retour accueil</a>

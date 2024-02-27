@@ -12,6 +12,17 @@ const input_situation = document.querySelector('#situation');
 const select_famille = document.querySelector('#famille');
 const myform = document.querySelector('form[name="myform"]');
 
+var personnel_en = document.getElementsByName('tous_les_personnels_en');
+var attee = document.getElementsByName('tous_les_ATTEE');
+var eleves = document.getElementsByName('tous_les_eleves');
+var blessures = document.getElementsByName('blessures');
+var maladies = document.getElementsByName('maladies');
+var pen_phy = document.getElementsByName('penibilite_physique');
+var pen_men = document.getElementsByName('penibilite_mentale');
+var probabilite = document.getElementsByName('probabilite');
+var complexite = document.getElementsByName('complexite_de_resolution');
+var solution = document.getElementsByName('solution_onereuse');
+
 input_nom.addEventListener('input', verifNom);
 input_prenom.addEventListener('input', verifPrenom);
 input_email.addEventListener('input', verifEmail);
@@ -121,8 +132,97 @@ function verifFamille() {
     }
 }
 
+function verifRadios() {
+    var val_personnel_en = null;
+    var val_attee = null;
+    var val_eleves = null;
+    var val_blessures = null;
+    var val_maladies = null;
+    var val_pen_phy = null;
+    var val_pen_men = null;
+    var val_probabilite = null;
+    var val_complexite = null;
+    var val_solution = null;
+
+    for (var i = 0; i < personnel_en.length; i++) {
+        if (personnel_en[i].checked) {
+            val_personnel_en = personnel_en[i].value;
+            break;
+        }
+    }
+    for (var i = 0; i < attee.length; i++) {
+        if (attee[i].checked) {
+            val_attee = attee[i].value;
+            break;
+        }
+    }
+    for (var i = 0; i < eleves.length; i++) {
+        if (eleves[i].checked) {
+            val_eleves = eleves[i].value;
+            break;
+        }
+    }
+    for (var i = 0; i < blessures.length; i++) {
+        if (blessures[i].checked) {
+            val_blessures = blessures[i].value;
+            break;
+        }
+    }
+    for (var i = 0; i < maladies.length; i++) {
+        if (maladies[i].checked) {
+            val_maladies = maladies[i].value;
+            break;
+        }
+    }
+    for (var i = 0; i < pen_phy.length; i++) {
+        if (pen_phy[i].checked) {
+            val_pen_phy = pen_phy[i].value;
+            break;
+        }
+    }
+    for (var i = 0; i < pen_men.length; i++) {
+        if (pen_men[i].checked) {
+            val_pen_men = pen_men[i].value;
+            break;
+        }
+    }
+    for (var i = 0; i < probabilite.length; i++) {
+        if (probabilite[i].checked) {
+            val_probabilite = probabilite[i].value;
+            break;
+        }
+    }
+    for (var i = 0; i < complexite.length; i++) {
+        if (complexite[i].checked) {
+            val_complexite = complexite[i].value;
+            break;
+        }
+    }
+    for (var i = 0; i < solution.length; i++) {
+        if (solution[i].checked) {
+            val_solution = solution[i].value;
+            break;
+        }
+    }
+
+    if(val_personnel_en != null
+        && val_attee != null
+        && val_eleves != null
+        && val_blessures != null
+        && val_maladies != null
+        && val_pen_phy != null
+        && val_pen_men != null
+        && val_probabilite != null
+        && val_complexite != null
+        && val_solution != null) {
+            return true;
+        } else {
+            return false;
+        }
+}
+
 function verifForm() {
-    if (verifNom() && verifPrenom() && verifEmail() && verifSalle() && verifFamille() && verifSituation() && verifLieu())
+    if (verifNom() && verifPrenom() && verifEmail() && verifSalle() && verifFamille() && verifSituation() && verifLieu() && verifRadios())
     {
         return true;
     } else {
