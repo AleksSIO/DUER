@@ -1,6 +1,6 @@
 <?php
 $mode=$_POST["mode"];
-include 'modele.php';
+include '../model/modele.php';
 
 switch ($mode) {
 
@@ -10,7 +10,7 @@ switch ($mode) {
 		if(empty($id)) 
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit();
 		}
 		else   
@@ -18,13 +18,13 @@ switch ($mode) {
 			$nb_lignes=supprimer_unite_de_travail($id[0]);
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_unite_de_travail.php"); 
+				header("Location:../view/vue_unite_de_travail.php"); 
 				exit(); 
 			}
 			else 
 			{
 				$message_erreur="Erreur lors de la verification des données dans la base de donnee." .$id[0];
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}	
         break;
@@ -34,7 +34,7 @@ switch ($mode) {
 		if(empty($id)) 
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); 
 		}
 		else 
@@ -42,13 +42,13 @@ switch ($mode) {
 			$nb_lignes=supprimer_solution_de_la_situation($id[0]);
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_resolution_de_la_situation.php"); 
+				header("Location:../view/vue_resolution_de_la_situation.php"); 
 				exit();
 			}
 			else 
 			{
 				$message_erreur="Erreur lors de la verification des données dans la base de donnee." .$id[0];
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}
 
@@ -60,7 +60,7 @@ switch ($mode) {
 		if(empty($id))
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); 
 		}
 		else 
@@ -68,13 +68,13 @@ switch ($mode) {
 			$nb_lignes=supprimer_probabilite($id[0]);
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_probabilite.php");
+				header("Location:../view/vue_probabilite.php");
 				exit();
 			}
 			else 
 			{
 				$message_erreur="Erreur lors de la verification des données dans la base de donnee." .$id[0];
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}
 		break;
@@ -85,7 +85,7 @@ switch ($mode) {
 		if(empty($id)) 
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); 
 		}
 		else 
@@ -93,13 +93,13 @@ switch ($mode) {
 			$nb_lignes=supprimer_personne_exposees($id[0]);
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_personne_exposees.php"); 
+				header("Location:../view/vue_personne_exposees.php"); 
 				exit(); 
 			}
 			else 
 			{
 				$message_erreur="Erreur lors de la verification des données dans la base de donnee." .$id[0];
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}
 		break;
@@ -112,7 +112,7 @@ switch ($mode) {
 		if(empty($id)) 
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); 
 		}
 		else  
@@ -120,13 +120,13 @@ switch ($mode) {
 			$nb_lignes=supprimer_gravite($id[0]);
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_gravite.php");
+				header("Location:../view/vue_gravite.php");
 				exit(); 
 			}
 			else 
 			{
 				$message_erreur="Erreur lors de la verification des données dans la base de donnee." .$id[0];
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}
 		break;
@@ -137,7 +137,7 @@ switch ($mode) {
 		if(empty($id)) 
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit();
 		}
 		else  
@@ -145,13 +145,13 @@ switch ($mode) {
 			$nb_lignes=supprimer_famille_de_risque($id[0]);
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_famille_de_risque.php"); 
+				header("Location:../view/vue_famille_de_risque.php"); 
 				exit(); 
 			}
 			else 
 			{
 				$message_erreur="Erreur lors de la verification des données dans la base de donnee." .$id[0];
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}
 		break;
@@ -161,7 +161,7 @@ switch ($mode) {
 		if(empty($id)) 
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit();
 		}
 		else  
@@ -169,7 +169,7 @@ switch ($mode) {
 			$nb_lignes=supprimer_image($id[0]);
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_image.php"); 
+				header("Location:../view/vue_image.php"); 
 				exit(); 
 			}
 			else 
@@ -178,7 +178,7 @@ switch ($mode) {
 				$message_erreur="Erreur lors de la verification des données dans la base de donnee.".$nb_lignes;
 
 				echo 'ee';
-				header("Location:vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}
 		break;
@@ -189,7 +189,7 @@ switch ($mode) {
 		if(empty($id)) 
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit();
 		}
 		else  
@@ -197,13 +197,13 @@ switch ($mode) {
 			$nb_lignes=supprimer_risque($id[0]);
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_risques.php"); 
+				header("Location:../view/vue_risques.php"); 
 				exit(); 
 			}
 			else 
 			{
 				$message_erreur="Erreur lors de la verification des données dans la base de donnee." .$id[0];
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}
 		break;

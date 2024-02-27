@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Accueil | DUERP</title>
     <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
@@ -35,7 +35,7 @@
         </div>
         <div class="acces-accueil">
         <div class="form-login">
-        <form  method=post action="controleur.php">
+        <form  method=post action="controller/controleur.php">
         <input type="hidden" name="mode" value="2">
         <div class="input-container">
             <input placeholder="Email" type="email" name="mail">
@@ -50,7 +50,7 @@
         </form>
         </div>
         <div class="boutons-accueil">
-        <a href="vue_formulaire.php"><button class="form-button">Formulaire</button></a>
+        <a href="view/vue_formulaire.php"><button class="form-button">Formulaire</button></a>
         </div>
         </div>
 

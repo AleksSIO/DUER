@@ -1,7 +1,7 @@
 <?php
 $mode=$_POST["mode"];
 
-include 'modele.php';
+include '../model/modele.php';
 
 switch ($mode) {
 
@@ -13,7 +13,7 @@ switch ($mode) {
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
 			// redirection vers la page vue erreur
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); // interruption après redirection
 		}
 		else // sinon effectuer les mise à jour
@@ -22,14 +22,14 @@ switch ($mode) {
 			// on a modifier 1 ligne
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_unite_de_travail.php"); // page de confirmation
+				header("Location:../view/vue_unite_de_travail.php"); // page de confirmation
 				exit(); // interruption de la fonction après redirection
 			}
 			else // il y a eu une erreur
 			{
 				$message_erreur="Erreur lors de la mise à jour des données du formulaire.";
 				// redirection vers la page vue erreur
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}    
         break;
@@ -43,7 +43,7 @@ switch ($mode) {
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
 			// redirection vers la page vue erreur
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); // interruption après redirection
 		}
 		else // sinon effectuer les mise à jour
@@ -52,14 +52,14 @@ switch ($mode) {
 			// on a modifier 1 ligne
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_resolution_de_la_situation"); // page de confirmation
+				header("Location:../view/vue_resolution_de_la_situation"); // page de confirmation
 				exit(); // interruption de la fonction après redirection
 			}
 			else // il y a eu une erreur
 			{
 				$message_erreur="Erreur lors de la mise à jour des données du formulaire.";
 				// redirection vers la page vue erreur
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}    
 		
@@ -73,7 +73,7 @@ switch ($mode) {
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
 			// redirection vers la page vue erreur
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); // interruption après redirection
 		}
 		else // sinon effectuer les mise à jour
@@ -82,14 +82,14 @@ switch ($mode) {
 			// on a modifier 1 ligne
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_probabilite.php"); // page de confirmation
+				header("Location:../view/vue_probabilite.php"); // page de confirmation
 				exit(); // interruption de la fonction après redirection
 			}
 			else // il y a eu une erreur
 			{
 				$message_erreur="Erreur lors de la mise à jour des données du formulaire.";
 				// redirection vers la page vue erreur
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}    
 		break;
@@ -105,7 +105,7 @@ switch ($mode) {
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
 			// redirection vers la page vue erreur
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); // interruption après redirection
 		}
 		else // sinon effectuer les mise à jour
@@ -114,14 +114,14 @@ switch ($mode) {
 			// on a modifier 1 ligne
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_personne_exposees.php"); // page de confirmation
+				header("Location:../view/vue_personne_exposees.php"); // page de confirmation
 				exit(); // interruption de la fonction après redirection
 			}
 			else // il y a eu une erreur
 			{
 				$message_erreur="Erreur lors de la mise à jour des données du formulaire.";
 				// redirection vers la page vue erreur
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}  
 		break;
@@ -137,7 +137,7 @@ switch ($mode) {
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
 			// redirection vers la page vue erreur
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); // interruption après redirection
 		}
 		else // sinon effectuer les mise à jour
@@ -146,14 +146,14 @@ switch ($mode) {
 			// on a modifier 1 ligne
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_gravite.php"); // page de confirmation
+				header("Location:./view/vue_gravite.php"); // page de confirmation
 				exit(); // interruption de la fonction après redirection
 			}
 			else // il y a eu une erreur
 			{
 				$message_erreur="Erreur lors de la mise à jour des données du formulaire.";
 				// redirection vers la page vue erreur
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}    
 		break;
@@ -166,7 +166,7 @@ switch ($mode) {
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
 			// redirection vers la page vue erreur
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); // interruption après redirection
 		}
 		else // sinon effectuer les mise à jour
@@ -175,14 +175,14 @@ switch ($mode) {
 			// on a modifier 1 ligne
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_famille_de_risque.php"); // page de confirmation
+				header("Location:../view/vue_famille_de_risque.php"); // page de confirmation
 				exit(); // interruption de la fonction après redirection
 			}
 			else // il y a eu une erreur
 			{
 				$message_erreur="Erreur lors de la mise à jour des données du formulaire.";
 				// redirection vers la page vue erreur
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}   
 		break;
@@ -195,7 +195,7 @@ switch ($mode) {
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
 			// redirection vers la page vue erreur
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); // interruption après redirection
 		}
 		else // sinon effectuer les mise à jour
@@ -204,14 +204,14 @@ switch ($mode) {
 			// on a modifier 1 ligne
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_famille_de_risque.php"); // page de confirmation
+				header("Location:../view/vue_famille_de_risque.php"); // page de confirmation
 				exit(); // interruption de la fonction après redirection
 			}
 			else // il y a eu une erreur
 			{
 				$message_erreur="Erreur lors de la mise à jour des données du formulaire.";
 				// redirection vers la page vue erreur
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}   
 		break;
@@ -238,7 +238,7 @@ switch ($mode) {
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
 			// redirection vers la page vue erreur
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); // interruption après redirection
 		}
 		else // sinon effectuer les mise à jour
@@ -252,14 +252,14 @@ switch ($mode) {
 			// on a modifier 1 ligne
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_risques.php"); // page de confirmation
+				header("Location:../view/vue_risques.php"); // page de confirmation
 				exit(); // interruption de la fonction après redirection
 			}
 			else // il y a eu une erreur
 			{
 				$message_erreur="Erreur lors de la mise à jour des données du formulaire.";
 				// redirection vers la page vue erreur
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}   
 		break;

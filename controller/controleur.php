@@ -2,7 +2,7 @@
 session_start();
 $mode=$_POST["mode"];
 
-include 'modele.php';
+include '../model/modele.php';
 
 switch ($mode) {
 
@@ -45,7 +45,7 @@ switch ($mode) {
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
 			// redirection vers la page vue erreur
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); // interruption après redirection
 		}
 		else 
@@ -72,14 +72,14 @@ switch ($mode) {
 			// on a inséré 1 ligne
 			if($nb_lignes > 0) 
 			{
-				header("Location:vue_confirmation.php?nb=$nb_lignes"); // page de confirmation
+				header("Location:../view/vue_confirmation.php?nb=$nb_lignes"); // page de confirmation
 				exit(); // interruption de la fonction après redirection
 			}
 			else // il y a eu une erreur
 			{
 				$message_erreur="Erreur lors de l'insertion des données du formulaire.";
 				// redirection vers la page vue erreur
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}		
 		} // fin si empty nom
         break;  // le signe && signifie OU
@@ -95,7 +95,7 @@ switch ($mode) {
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";
 			// redirection vers la page vue erreur
-			header("Location: vue_erreur.php?erreur=$message_erreur");
+			header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			exit(); // interruption après redirection
 		}
 		else // $nom et $prenom sont corrects  
@@ -105,14 +105,16 @@ switch ($mode) {
 			{
 				// cette variable indique que l'authentification a réussi
 				$_SESSION['loggedin'] = true;
-				header("Location:vue_admin.php"); // page de confirmation
+				$_SESSION['role'] = 'admin';
+				header("Location:../view/vue_admin.php"); // page de confirmation
 				 // interruption de la fonction après redirection
 			}
 			else if($compte && $compte['role'] == 'util')
 			{
 				// cette variable indique que l'authentification a réussi
 				$_SESSION['loggedin'] = true;
-				header("Location:vue_utilisateur.php"); // page de confirmation
+				$_SESSION['role'] = 'util';
+				header("Location:../view/vue_utilisateur.php"); // page de confirmation
 				 // interruption de la fonction après redirection
 			}
 			else // il y a eu une erreur
@@ -120,7 +122,7 @@ switch ($mode) {
 				$_SESSION['loggedin'] = false;
 				$message_erreur="Erreur lors de la verification des données dans la base de donnee.";
 				// redirection vers la page vue erreur
-				header("Location: vue_erreur.php?erreur=$message_erreur");
+				header("Location:../view/vue_erreur.php?erreur=$message_erreur");
 			}	
 		}	
 				

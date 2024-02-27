@@ -14,7 +14,7 @@ function utilisateur($nom, $prenom, $email)
 		$message_erreur="Impossible d'executer la requete: $sql " ;
 		echo $message_erreur;
 		die();
-		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -38,7 +38,7 @@ function inserer_unite_de_travail($id, $salle)
 		$message_erreur="Impossible d'executer la requete: $sql " ;
 		echo $message_erreur;
 		die();
-		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -63,7 +63,7 @@ function inserer_solution_de_la_situation( $complexite, $solution_onereuse)
 		$message_erreur="Impossible d'executer la requete: $sql " ;
 		echo $message_erreur;
 		die();
-		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -89,7 +89,7 @@ function inserer_situation_dangereuse($id, $precis)
 		$message_erreur="Impossible d'executer la requete: $sql ";
 		echo $message_erreur;
 		die();
-		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -113,7 +113,7 @@ function inserer_probabilite( $probabilite)
 		$message_erreur="Impossible d'executer la requete: $sql " ;
 		echo $message_erreur;
 		die();
-		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -139,7 +139,7 @@ function inserer_personne_exposees($id, $personnels, $atte, $eleves)
 		$message_erreur="Impossible d'executer la requete: $sql " ;
 		echo $message_erreur;
 		die();
-		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -165,7 +165,7 @@ function inserer_localisation($id, $emplacement)
 		$message_erreur="Impossible d'executer la requete: $sql " ;
 		echo $message_erreur;
 		die();
-		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -192,7 +192,7 @@ function inserer_gravite($id, $blessures, $maladie, $penibilite_physique, $penib
 		$message_erreur="Impossible d'executer la requete: $sql " ;
 		echo $message_erreur;
 		die();
-		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -217,7 +217,7 @@ function inserer_famille_de_risque($id, $famille)
 		$message_erreur="Impossible d'executer la requete: $sql " ;
 		echo $message_erreur;
 		die();
-		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -242,7 +242,7 @@ function inserer_comptes($id, $email, $name, $password)
 		$message_erreur="Impossible d'executer la requete: $sql " ;
 		echo $message_erreur;
 		die();
-		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -305,7 +305,7 @@ function inserer_risque( $etat,
 		$message_erreur="Impossible d'executer la requete: $sql " ;
 		echo $message_erreur;
 		die();
-		header("Location:../vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -330,7 +330,7 @@ function inserer_image($images)
         // File name
         $filename = $_FILES['files']['name'][$i];
         // Location
-        $target_file = './images/'.$filename;
+        $target_file = '../images/'.$filename;
         // file extension
         $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
         $file_extension = strtolower($file_extension);
@@ -363,7 +363,7 @@ function verif_connexion($mail, $pass)
 	if(!$data=$stmt->fetch(PDO::FETCH_ASSOC)) 
 	{	
 		$message_erreur="Impossible d'executer la requete: $sql  ";
-		header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+		header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
 		exit(); // interruption de la fonction après redirection
 	}
 	else // insert réussi
@@ -391,7 +391,7 @@ function select_image()
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -427,7 +427,7 @@ function select_utilisateur(){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -455,7 +455,7 @@ function select_localisation(){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -483,7 +483,7 @@ function select_comptes(){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -511,7 +511,7 @@ function select_unite_de_travail(){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -539,7 +539,7 @@ function select_famille_de_risque(){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -563,7 +563,7 @@ function select_personne_exposees(){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -587,7 +587,7 @@ function select_gravite(){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -611,7 +611,7 @@ function select_probabilite(){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -635,7 +635,7 @@ function select_solution_de_la_situation(){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -679,7 +679,7 @@ function select_risque(){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -707,7 +707,7 @@ function one_select_utilisateur($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -735,7 +735,7 @@ function one_select_localisation($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -763,7 +763,7 @@ function one_select_comptes($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -791,7 +791,7 @@ function one_select_unite_de_travail($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -817,7 +817,7 @@ function one_select_famille_de_risque($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -841,7 +841,7 @@ function one_select_personne_exposees($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -865,7 +865,7 @@ function one_select_gravite($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -889,7 +889,7 @@ function one_select_probabilite($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -913,7 +913,7 @@ function one_select_solution_de_la_situation($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -959,7 +959,7 @@ function one_select_risque($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -983,7 +983,7 @@ function modifier_etat($etat,$id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1009,7 +1009,7 @@ function modifier_situation_dangereuse($precis,$id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1035,7 +1035,7 @@ function modifier_utilisateur($nom,$prenom,$email,$id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1060,7 +1060,7 @@ function modifier_localisation($emplacement,$id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1086,7 +1086,7 @@ function modifier_comptes($mail,$name,$password,$id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1109,7 +1109,7 @@ function modifier_unite_de_travail($salle, $id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1132,7 +1132,7 @@ function modifier_famille_de_risque($famille, $id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1154,7 +1154,7 @@ function modifier_personne_exposees($personnels, $atte, $eleves, $id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1176,7 +1176,7 @@ function modifier_gravite($blessures, $maladie, $penibilite_physique, $penibilit
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1198,7 +1198,7 @@ function modifier_probabilite($probabilite, $id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1220,7 +1220,7 @@ function modifier_solution_de_la_situation($complexite, $solution_onereuse, $id)
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1251,7 +1251,7 @@ function modifier_risque(   $date_creation,
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1281,7 +1281,7 @@ function supprimer_utilisateur($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1307,7 +1307,7 @@ function supprimer_localisation($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1332,7 +1332,7 @@ function supprimer_comptes($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1355,7 +1355,7 @@ function supprimer_unite_de_travail($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1378,7 +1378,7 @@ function supprimer_famille_de_risque($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1399,7 +1399,7 @@ function supprimer_personne_exposees($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1421,7 +1421,7 @@ function supprimer_gravite($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1443,7 +1443,7 @@ function supprimer_probabilite($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1465,7 +1465,7 @@ function supprimer_solution_de_la_situation($id){
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1491,7 +1491,7 @@ function supprimer_image($id)
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi
@@ -1516,7 +1516,7 @@ function supprimer_risque($id)
         $message_erreur="Impossible d'executer la requete: $sql " ;
         echo $message_erreur;
         die();
-        header("Location:vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
         exit(); // interruption de la fonction après redirection
     }
     else // insert réussi

@@ -22,7 +22,7 @@ function toggleBackHomeListener() {
 
 function backHome(e) {
     e.preventDefault();
-    window.location.href = "./index.php";
+    window.location.href = "../index.php";
 }
 
 function switchNextPage(e) {
