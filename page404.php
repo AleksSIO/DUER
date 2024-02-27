@@ -28,7 +28,7 @@
     <div class="block-f">
         <p class="p3">❌ Malheureusement ❌</p>
         <p class="p4">Cette page est innaccessible si vous n'êtes pas connecté.</p>
-        <a href="vue_acceuil.php">Retour accueil</a>
+        <a href="index.php" class='retour'>Retour accueil</a>
     </div>
 </body>
 </html>

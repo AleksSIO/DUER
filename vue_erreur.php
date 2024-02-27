@@ -27,13 +27,13 @@
 <body>
     <div class="block-f">
         <p class="p3">❌ Malheureusement ❌</p>
-        <p class="p4">Les informations n'ont pas ete transmis à la base de donnees.</p>
+        <p class="p4">Les informations n'ont pas été transmises à la base de donnees.</p>
         <?php
             $erreur=$_GET["erreur"];
             echo "<p class='erreur'>$erreur</p>";
         ?>
         <!-- Lien pour retourner à la page initiale -->
-        <a href="vue_acceuil.php">Retour accueil</a>
+        <a href="index.php" class="retour">Retour accueil</a>
     </div>
 </body>
 </html>

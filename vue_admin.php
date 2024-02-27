@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
  if(!$_SESSION['loggedin']) {
     header('Location:page404.php');
  }
@@ -31,6 +33,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script src="./scripts/session.js" defer></script>
 </head>
 <body>
     <div class="block-p">
