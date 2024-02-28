@@ -9,6 +9,14 @@ body{
     overflow: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+p::selection {
+  background: var(--secondary-green);
+}
+
 :root {
   --primary-green: #93c90e;
   --secondary-green: #9ad10f;
@@ -501,6 +509,7 @@ a{
   top: 40%;
   left: 52%;
   width: 500px;
+  height: 150px;
 }
 
 .admin-menu {
@@ -513,5 +522,62 @@ a{
   width: 750px;
 }
 
+.text-reception {
+  border: none;
+  background: var(--primary-green);
+  border-radius: 10px 10px 0 0;
+  width: 509px;
+  height: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  left: 52%;
+  top: 45%;
+}
+
+.text-reception p{
+  color: white
+}
+
+.reception {
+  border: 2px solid var(--primary-green);
+  background: white;
+  border-radius: 0 0 10px 10px;
+  width: 505px;
+  height: 300px;
+  color: white;
+  display: flex;
+  flex-direction: column; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  left: 52%;
+  top: 49.2%;
+}
+
+.risque-card {
+  width: 100%;
+  min-height: 100px;
+  color: black;
+  border-bottom: 2px solid var(--secondary-green);
+}
+
+.reception::-webkit-scrollbar {
+  width: 10px; 
+}
+
+/* Bouton de défilement */
+.reception::-webkit-scrollbar-thumb {
+  background-color: var(--primary-green); 
+}
+
+/* Piste de défilement */
+.reception::-webkit-scrollbar-track {
+  background-color: transparent; 
+}
 
 

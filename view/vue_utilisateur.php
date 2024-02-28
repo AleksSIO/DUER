@@ -61,7 +61,19 @@ session_start();
         </form>
         </div>
         </div>
+        <div class="text-reception"><p>Boîte de réception</p></div>
+        <div class="reception">
+        <?php 
+        require "../model/modele.php";
 
+        $les_risques = select_risque();
+
+        foreach($les_risques as $risque){
+            echo "<div class='risque-card'> Risque
+            </div>";
+        }
+        ?>
+        </div>
     </div>
 </body>
 </html>

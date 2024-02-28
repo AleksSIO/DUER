@@ -647,28 +647,8 @@ function select_solution_de_la_situation(){
 function select_risque(){
 	require 'connexion.php';
     $risques = array();
-	$sql = "SELECT  Id_Risques, etat, date_creation, date_derniere_modification, 
-            ip.tous_les_personnels_EN, ip.tous_les_ATTEE, ip.tous_les_eleves,                                /* Personne exposees */ 
-            g.Blessure_graves_ou_deces, g.maladie_mortelle, g.penibilite_physique, g.peniibilite_mentale,	/* Gravite           */
-            s.complexite_de_resolution, s.solution_onereuse,                                                 /* Solution          */
-            i.name as nomimage, i.image,
-            f.famille, 
-            ut.nom, ut.prenom , 
-            sd.precis, 
-            p.probabilite, 
-            l.emplacement_precis, 
-            u.salle 
-            FROM `risques` 
-            INNER JOIN famille_de_risque f ON risques.Id_Famille_de_risque = f.Id_Famille_de_risque
-            INNER JOIN gravite g ON risques.Id_Gravite = g.Id_Gravite
-            INNER JOIN images i ON risques.Id_images= i.Id_images
-            INNER JOIN localisation l ON risques.Id_Localisation = l.Id_Localisation
-            INNER JOIN personne_exposees ip ON risques.Id_personne_exposees = ip.Id_personne_exposees
-            INNER JOIN probabilite p ON risques.Id_Probabilite = p.Id_Probabilite
-            INNER JOIN situation_dangereuse sd ON risques.Id_Situation_dangereuse = sd.Id_Situation_dangereuse
-            INNER JOIN solution_de_la_situation s ON risques.Id_solution_de_la_situation = s.Id_solution_de_la_situation
-            INNER JOIN unite_de_travail u ON risques.Id_Unite_de_travail = u.Id_Unite_de_travail
-            INNER JOIN utilisateur ut ON risques.Id_Utilisateur = ut.Id_Utilisateur";
+	$sql = "SELECT *
+            FROM `risques`;";
 	$stmt = $bdd->prepare($sql);
 	$stmt->execute();
     $risques = $stmt->fetchAll();
