@@ -21,6 +21,7 @@ function toggleBackHomeListener() {
 }
 
 function backHome(e) {
+    e.preventDefault();
     fetch('check_session.php')
         .then(response => response.json())
         .then(data => {

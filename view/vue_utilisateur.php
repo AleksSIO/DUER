@@ -57,7 +57,7 @@ session_start();
         <div class="logout">
         <form  method=post action="../controller/controleur.php">
         <input type="hidden" name="mode" value="3">
-        <button class="logout-button" type="submit">Se déconnecter</button>
+        <button class="logout-button-user" type="submit">Se déconnecter</button>
         </form>
         </div>
         </div>

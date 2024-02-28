@@ -106,6 +106,7 @@ switch ($mode) {
 				// cette variable indique que l'authentification a réussi
 				$_SESSION['loggedin'] = true;
 				$_SESSION['role'] = 'admin';
+				$_SESSION['user'] = $compte['name_user'];
 				header("Location:../view/vue_admin.php"); // page de confirmation
 				 // interruption de la fonction après redirection
 			}

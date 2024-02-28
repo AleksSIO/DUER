@@ -39,29 +39,45 @@ session_start();
     <div class="block-p">
         <div class="titres-accueil-">
         <p class="p1">Accueil</p>
-        <p class="p2">Bienvenue à l'accueil de l'application DUERP.</p>
+        <?php
+
+        echo "<p class='p2'>Utilisateur connecté : ".$_SESSION['user']."</p>";
+
+        ?>
         </div>
         <div class="logo-accueil">  
         <img src="../assets/duer_logo.png" class="logo">
         </div>
-        <div class="acces-accueil">
-        <div class="form-login">
-        <form  method=post action="controleur.php">
-        <input type="hidden" name="mode" value="2">
-        <div class="input-container">
-            <input placeholder="Email" type="email" name="mail">
+        <div class="admin-menu">
+        <div class="form-case">
+        <a href="vue_formulaire.php"><button class="form-button-user">Formulaire</button></a>
         </div>
-        <div class="input-container">
-            <input placeholder="Mot de passe" type="password" name="password">
+        <div class="risques-case">
+        <a href="vue_risques.php"><button class="form-button-user">Risques</button></a>
         </div>
-        <a class="pass-ft" href="">Mot de passe oublié</a>
-            <button class="submit-login" type="submit" name="submit">
-            Se connecter
-            </button>
+        <div class="famille-risques-case">
+        <a href="vue_famille_de_risque.php"><button class="form-button-user">Famille de risques</button></a>
+        </div>
+        <div class="gravite-case">
+        <a href="vue_gravite.php"><button class="form-button-user">Gravité</button></a>
+        </div>
+        <div class="per-exp-case">
+        <a href="vue_personne_exposees.php"><button class="form-button-user">Personnes exposées</button></a>
+        </div>
+        <div class="proba-case">
+        <a href="vue_probabilite.php"><button class="form-button-user">Probabilité</button></a>
+        </div>
+        <div class="resol-case">
+        <a href="vue_resolution_de_la_situation.php"><button class="form-button-user">Résolution de la situation</button></a>
+        </div>
+        <div class="unite-case">
+        <a href="vue_unite_de_travail.php"><button class="form-button-user">Unité de travail</button></a>
+        </div>
+        <div class="logout">
+        <form  method=post action="../controller/controleur.php">
+        <input type="hidden" name="mode" value="3">
+        <button class="logout-button-admin" type="submit">Se déconnecter</button>
         </form>
-        </div>
-        <div class="boutons-accueil">
-        <a href="vue_formulaire.php"><button class="form-button">Formulaire</button></a>
         </div>
         </div>
 

@@ -460,7 +460,24 @@ a{
   cursor: pointer;
 }
 
-.logout-button{
+.logout-button-admin{
+  border-radius: 20px;
+  border: none;
+  background: var(--primary-green);
+  width: 510px;
+  height: 30px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.logout-button-admin:hover{
+  background: var(--secondary-green);
+  cursor: pointer;
+}
+
+.logout-button-user{
   border-radius: 20px;
   border: none;
   background: var(--primary-green);
@@ -472,7 +489,7 @@ a{
   font-size: 12px;
 }
 
-.logout-button:hover{
+.logout-button-user:hover{
   background: var(--secondary-green);
   cursor: pointer;
 }
@@ -483,6 +500,18 @@ a{
   position: absolute;
   top: 40%;
   left: 52%;
+  width: 500px;
 }
+
+.admin-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: absolute;
+  top: 48%;
+  left: 52%;
+  width: 750px;
+}
+
 
 
