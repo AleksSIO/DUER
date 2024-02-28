@@ -21,8 +21,20 @@ function toggleBackHomeListener() {
 }
 
 function backHome(e) {
-    e.preventDefault();
-    window.location.href = "../index.php";
+    fetch('check_session.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.loggedin && data.role) {
+                window.location.href = '../view/vue_utilisateur.php';
+            } else {
+                window.location.href = '../index.php';
+            }
+        })
+        .catch(error => {
+            console.error('Error checking session:', error);
+            // Rediriger vers index.php en cas d'erreur
+            window.location.href = '../index.php';
+        });
 }
 
 function switchNextPage(e) {

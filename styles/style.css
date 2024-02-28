@@ -9,6 +9,15 @@ body{
     overflow: hidden;
 }
 
+:root {
+  --primary-green: #93c90e;
+  --secondary-green: #9ad10f;
+  --primary-orange: #f7a739;
+  --secondary-orange: #f6b253;
+  --valid-color: rgb(16, 221, 1);
+  --error-color: red;
+}
+
 a{
   text-decoration: none;
   color: white;
@@ -125,7 +134,7 @@ a{
 .submit-login{
   border-radius: 20px;
   border: none;
-  background: #93c90e;
+  background: var(--primary-green);
   width: 425px;
   height: 50px;
   color: white;
@@ -135,7 +144,7 @@ a{
 }
 
 .submit-login:hover{
-  background: #9ad10f;
+  background: var(--secondary-green);
   cursor: pointer;
 }
 
@@ -154,7 +163,7 @@ a{
 .form-button{
   border-radius: 20px;
   border: none;
-  background: #f7a739;
+  background: var(--primary-orange);
   width: 425px;
   height: 50px;
   color: white;
@@ -164,7 +173,7 @@ a{
 }
 
 .form-button:hover{
-  background: #f6b253;
+  background: var(--secondary-orange);
   cursor: pointer;
 }
 
@@ -191,7 +200,7 @@ a{
 }
 
 .pg-selected{
-  background: #f7a739;
+  background: var(--primary-orange);
 }
 
 .visible {
@@ -206,7 +215,7 @@ a{
 #back {
   border-radius: 20px;
   border: none;
-  background: #f7a739;
+  background: var(--primary-orange);
   width: 170px;
   height: 30px;
   color: white;
@@ -229,7 +238,7 @@ a{
 #next {
   border-radius: 20px;
   border: none;
-  background: #f7a739;
+  background: var(--primary-orange);
   width: 150px;
   height: 30px;
   color: white;
@@ -283,7 +292,7 @@ a{
 .pg-1 .nom.valid-input,
 .pg-1 .prenom.valid-input,
 .pg-1 .email.valid-input {
-  border: 2px solid rgb(16, 221, 1);
+  border: 2px solid var(--valid-color);
 }
 
 .pg-1 .nom.valid-input:hover,
@@ -293,13 +302,13 @@ a{
 .pg-1 .prenom.valid-input:focus,
 .pg-1 .email.valid-input:focus {
   outline: none;
-  border: 2px solid rgb(16, 221, 1);
+  border: 2px solid var(--valid-color);
 }
 
 .pg-1 .nom.error-input,
 .pg-1 .prenom.error-input,
 .pg-1 .email.error-input {
-  border: 2px solid red;
+  border: 2px solid var(--error-color);
 }
 
 .pg-1 .nom.error-input:hover,
@@ -309,7 +318,7 @@ a{
 .pg-1 .prenom.error-input:focus,
 .pg-1 .email.error-input:focus {
   outline: none;
-  border: 2px solid red;
+  border: 2px solid var(--error-color);
 }
 
 .pg-2 {
@@ -361,7 +370,7 @@ a{
 .pg-2 .lieu.valid-input,
 .pg-2 .situation.valid-input,
 .pg-2 .famille.valid-input {
-  border: 2px solid rgb(16, 221, 1);
+  border: 2px solid var(--valid-color);
 }
 
 .pg-2 .salle.valid-input:hover,
@@ -373,14 +382,14 @@ a{
 .pg-2 .situation.valid-input:focus,
 .pg-2 .famille.valid-input:focus{
   outline: none;
-  border: 2px solid rgb(16, 221, 1);
+  border: 2px solid var(--valid-color);
 }
 
 .pg-2 .salle.error-input,
 .pg-2 .lieu.error-input,
 .pg-2 .situation.error-input,
 .pg-2 .famille.error-input{
-  border: 2px solid red;
+  border: 2px solid var(--error-color);
 }
 
 .pg-2 .salle.error-input:hover,
@@ -392,7 +401,7 @@ a{
 .pg-2 .situation.error-input:focus,
 .pg-2 .famille.error-input {
   outline: none;
-  border: 2px solid red;
+  border: 2px solid var(--error-color);
 }
 
 .pg-3 .block-1{
@@ -432,6 +441,48 @@ a{
 
 .retour {
   color : black;
+}
+
+.form-button-user{
+  border-radius: 20px;
+  border: none;
+  background: var(--primary-orange);
+  width: 250px;
+  height: 30px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.form-button-user:hover{
+  background: var(--secondary-orange);
+  cursor: pointer;
+}
+
+.logout-button{
+  border-radius: 20px;
+  border: none;
+  background: var(--primary-green);
+  width: 250px;
+  height: 30px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.logout-button:hover{
+  background: var(--secondary-green);
+  cursor: pointer;
+}
+
+.user-menu {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 40%;
+  left: 52%;
 }
 
 

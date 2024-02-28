@@ -41,29 +41,24 @@ session_start();
     <div class="block-p">
         <div class="titres-accueil-">
         <p class="p1">Accueil</p>
-        <p class="p2">Bienvenue à l'accueil de l'application DUERP.</p>
+        <?php
+
+        echo "<p class='p2'>Utilisateur connecté : ".$_SESSION['user']."</p>";
+
+        ?>
         </div>
         <div class="logo-accueil">  
         <img src="../assets/duer_logo.png" class="logo">
         </div>
-        <div class="acces-accueil">
-        <div class="form-login">
-        <form  method=post action="controleur.php">
-        <input type="hidden" name="mode" value="2">
-        <div class="input-container">
-            <input placeholder="Email" type="email" name="mail">
+        <div class="user-menu">
+        <div class="form-case">
+        <a href="vue_formulaire.php"><button class="form-button-user">Formulaire</button></a>
         </div>
-        <div class="input-container">
-            <input placeholder="Mot de passe" type="password" name="password">
-        </div>
-        <a class="pass-ft" href="">Mot de passe oublié</a>
-            <button class="submit-login" type="submit" name="submit">
-            Se connecter
-            </button>
+        <div class="logout">
+        <form  method=post action="../controller/controleur.php">
+        <input type="hidden" name="mode" value="3">
+        <button class="logout-button" type="submit">Se déconnecter</button>
         </form>
-        </div>
-        <div class="boutons-accueil">
-        <a href="vue_formulaire.php"><button class="form-button">Formulaire</button></a>
         </div>
         </div>
 

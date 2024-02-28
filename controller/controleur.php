@@ -114,6 +114,7 @@ switch ($mode) {
 				// cette variable indique que l'authentification a réussi
 				$_SESSION['loggedin'] = true;
 				$_SESSION['role'] = 'util';
+				$_SESSION['user'] = $compte['name_user'];
 				header("Location:../view/vue_utilisateur.php"); // page de confirmation
 				 // interruption de la fonction après redirection
 			}
@@ -127,7 +128,13 @@ switch ($mode) {
 		}	
 				
 		break;
-
+		case 3: //déconnexion
+			unset($_SESSION['user']);
+			unset($_SESSION['loggedin']);
+			unset($_SESSION['role']);
+			session_destroy();
+			header("Location:../index.php");
+			break;
 
 
 
