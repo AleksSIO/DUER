@@ -559,13 +559,6 @@ a{
   top: 49.2%;
 }
 
-.risque-card {
-  width: 100%;
-  min-height: 100px;
-  color: black;
-  border-bottom: 2px solid var(--secondary-green);
-}
-
 .reception::-webkit-scrollbar {
   width: 10px; 
 }
@@ -573,6 +566,7 @@ a{
 /* Bouton de défilement */
 .reception::-webkit-scrollbar-thumb {
   background-color: var(--primary-green); 
+  border-radius: 0 0 10px 10px;
 }
 
 /* Piste de défilement */
@@ -580,4 +574,73 @@ a{
   background-color: transparent; 
 }
 
+.risque-card {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  color: black;
+  border-bottom: 1px solid var(--secondary-green);
+}
+
+.pdf-button {
+  left: 4%;
+  top : 25%;
+  position: absolute;
+  display: flex;
+  background: var(--primary-green);
+  width: 50px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 50%;
+  border: none;
+}
+
+.pdf-button:hover {
+  background: var(--secondary-green);
+}
+
+.pdf-logo {
+  width: 30px;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+
+.text-card{
+  position: absolute; 
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20%;
+  width: calc(100% - 40px);
+  text-align: left;
+  text-transform: none;
+  font-size: 10px; 
+}
+
+.more-button {
+  left: 85%;
+  margin-left: 3%;
+  top: 30%;
+  display: flex;
+  position: absolute;
+  width: 50px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+}
+
+.more-button:hover {
+  transform: scaleX(110%);
+}
+
+
+.more-logo {
+  width: 20px;
+  filter: hue-rotate(180deg);
+  transform: rotate(90deg);
+}
+
+.pdf-form {
+  margin: 0;
+  padding: 0;
+}
 

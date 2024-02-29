@@ -63,16 +63,39 @@ session_start();
         </div>
         <div class="text-reception"><p>Boîte de réception</p></div>
         <div class="reception">
+        <form method="post" class="pdf-form" action="../controller/generer_pdf.php">
         <?php 
         require "../model/modele.php";
 
-        $les_risques = select_risque();
+        $les_risques = select_risques();
 
         foreach($les_risques as $risque){
-            echo "<div class='risque-card'> Risque
-            </div>";
+            $date_creation = strtotime($risque['date_creation']);
+            $date_formattee = date("d/m/Y", $date_creation); // Formatage de la date
+            $heure_formattee = date("H:i", $date_creation); // Formatage de l'heure
+        ?>  
+            <form method="post" class="pdf-form" action="../controller/generer_pdf.php">
+            <input type="hidden" name="id_risque" value="<?php echo $risque['Id_Risques']; ?>">
+            <div class="risque-card"> 
+            <div class="text-card">
+                <p class="nom-prenom"><?php echo $risque['nom']." ".$risque['prenom']; ?></p>
+                <p class="email"><?php echo $risque['email']; ?></p>
+                <p class="etat">Etat : <?php echo $risque['etat']; ?></p>
+                <p class="date-creation">Soumis le : <?php echo $date_formattee." à ".$heure_formattee; ?></p>
+            </div>
+            <button type="submit" class="pdf-button" name="submit_<?php echo $risque['Id_Risques']; ?>" title="Télécharger le récapitulatif en PDF">
+                <img src="../assets/pdf_icon.png" class="pdf-logo">
+            </button>
+            <button class="more-button" title="En savoir plus">
+                <img src="../assets/dots.png" class="more-logo">
+            </button>
+            </div>
+            </form>
+        <?php
         }
         ?>
+    </form>
+        </div>
         </div>
     </div>
 </body>

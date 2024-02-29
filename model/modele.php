@@ -644,11 +644,16 @@ function select_solution_de_la_situation(){
     }
     return $solution;
 }
-function select_risque(){
+function select_risques(){
 	require 'connexion.php';
     $risques = array();
-	$sql = "SELECT *
-            FROM `risques`;";
+	$sql = "SELECT Id_Risques, etat, date_creation,
+            date_derniere_modification, u.nom, u.prenom,
+            u.email
+            FROM risques r
+            INNER JOIN utilisateur u
+            ON r.Id_Utilisateur = u.Id_Utilisateur
+            ORDER BY r.date_creation DESC;";
 	$stmt = $bdd->prepare($sql);
 	$stmt->execute();
     $risques = $stmt->fetchAll();
@@ -667,6 +672,35 @@ function select_risque(){
         $count = $stmt->rowCount(); // compte le nombre de lignes affectées (normalement 1 ligne insérée)
     }
     return $risques;
+}
+
+function recuperer_infos_risque_par_id($id_risque){
+    require 'connexion.php';
+    $sql = "SELECT Id_Risques, etat, date_creation,
+            date_derniere_modification, u.nom, u.prenom,
+            u.email
+            FROM risques r
+            INNER JOIN utilisateur u
+            ON r.Id_Utilisateur = u.Id_Utilisateur
+            WHERE Id_Risques = :risque";
+    
+    $stmt = $bdd->prepare($sql);
+    $stmt->bindParam(':risque', $id_risque, PDO::PARAM_INT);
+	$stmt->execute();
+    
+    // Vérifier si la requête s'est bien exécutée
+    if($stmt === false) {
+        $message_erreur = "Impossible d'exécuter la requête: $sql";
+        // Afficher un message d'erreur ou rediriger vers une page d'erreur
+        echo $message_erreur;
+        header("Location: ../view/vue_erreur.php?erreur=$message_erreur");
+        exit(); // Arrêter l'exécution du script après la redirection
+    }
+    
+    // Récupérer les résultats de la requête
+    $risque = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    return $risque;
 }
 
 // ONE SELECT
