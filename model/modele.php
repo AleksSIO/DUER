@@ -4,10 +4,23 @@ function utilisateur($nom, $prenom, $email)
 {
 
 	require 'connexion.php';
+
+    $utilisateurs = select_utilisateur();
+    $exist = false;
+    $count = 0;
+
+    foreach($utilisateurs as $utilisateur) {
+        if($utilisateur['nom'] == $nom && $utilisateur['prenom'] == $prenom && $utilisateur['email'] = $email) {
+            $exist = true;
+            $count = $utilisateur['Id_Utilisateur'];
+        }
+    }
+    
+    if($exist == false) {
 	$sql = "INSERT INTO utilisateur (nom, prenom, email) VALUES (?, ?, ?)";
 	$stmt= $bdd->prepare($sql);
 	$stmt->execute([$nom, $prenom, $email]);
-	$count = 0;
+	
 
 	if($stmt == false) 
 	{	
@@ -20,10 +33,13 @@ function utilisateur($nom, $prenom, $email)
 	else // insert réussi
 	{
 		$count = $bdd->lastInsertId(); // compte le nombre de lignes affectées (normalement 1 ligne insérée)
-	}
+	} }
 	return $count ;
 	
 }
+
+
+
 function inserer_unite_de_travail($id, $salle)
 {
 	require 'connexion.php';
