@@ -61,6 +61,7 @@ switch ($mode) {
 			$Id_Famille_de_risque=inserer_famille_de_risque(NULL, $FamilleRisque);
 			$Id_Photos=inserer_image(NULL, $images);
 
+			date_default_timezone_set('Europe/Paris');
 			$date_creation=date('Y-m-d H:i:s');
 			$date_derniere_modification=date('Y-m-d H:i:s');
 

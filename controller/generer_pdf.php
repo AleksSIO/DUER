@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 // Inclure FPDF
 require_once('../vendor/fpdf/fpdf.php');
 

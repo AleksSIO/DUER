@@ -628,19 +628,33 @@ a{
   background: transparent;
 }
 
-.more-button:hover {
-  transform: scaleX(110%);
-}
-
-
 .more-logo {
   width: 20px;
-  filter: hue-rotate(180deg);
-  transform: rotate(90deg);
 }
+
 
 .pdf-form {
   margin: 0;
   padding: 0;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1;
+}
+
+.popup-text {
+  color: #333;
+  text-transform: none;
+}
+
+.popup.active {
+  display: block;
+  position: absolute;
+  left: 80%;
 }
 

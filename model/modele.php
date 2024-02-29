@@ -322,7 +322,7 @@ function inserer_image($images)
     // Count total files
     $countfiles = count($_FILES['files']['name']);   
     // Prepared statement
-    $sql = "INSERT INTO photos (name,image) VALUES(?,?)";
+    $sql = "INSERT INTO photos (nom,photos) VALUES(?,?)";
     $stmt = $bdd->prepare($sql);
     $count = 0;
     // Loop all files

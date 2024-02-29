@@ -237,7 +237,7 @@ if (isset($_SESSION['loggedin'])){
         </div>
         <div class="formulaire pg-4 hidden">
           <h3>Photos</h3>
-          <input type="file" name='files[]' multiple>
+          <input type="file" name='files[]' />
         </div>
         <div class="back-pg">
         <button class="active" id="back">🡰 Retour à l'accueil</button>

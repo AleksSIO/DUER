@@ -66,7 +66,7 @@ session_start();
         require "../model/modele.php";
 
         $les_risques = select_risques();
-
+        if($les_risques) {
         foreach($les_risques as $risque){
             $date_creation = strtotime($risque['date_creation']);
             $date_formattee = date("d/m/Y", $date_creation); // Formatage de la date
@@ -81,16 +81,13 @@ session_start();
                 <p class="etat">Etat : <?php echo $risque['etat']; ?></p>
                 <p class="date-creation">Soumis le : <?php echo $date_formattee." à ".$heure_formattee; ?></p>
             </div>
-            <button type="submit" class="pdf-button" name="submit_<?php echo $risque['Id_Risques']; ?>" title="Télécharger le récapitulatif en PDF">
+            <button type="submit" class="pdf-button"s title="Télécharger le récapitulatif en PDF">
                 <img src="../assets/pdf_icon.png" class="pdf-logo">
-            </button>
-            <button class="more-button" title="En savoir plus">
-                <img src="../assets/dots.png" class="more-logo">
             </button>
             </div>
             </form>
         <?php
-        }
+        }}
         ?>
     </form>
         </div>
