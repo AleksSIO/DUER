@@ -198,7 +198,7 @@ function inserer_gravite($id, $blessures, $maladie, $penibilite_physique, $penib
 {
 	require 'connexion.php';
 
-	$sql = "INSERT INTO gravite (Id_Gravite, Blessure_graves_ou_deces, maladie_mortelle, penibilite_physique, peniibilite_mentale) VALUES (?, ?, ?, ?, ?)";
+	$sql = "INSERT INTO gravite (Id_Gravite, Blessure_graves_ou_deces, maladie_mortelle, penibilite_physique, penibilite_mentale) VALUES (?, ?, ?, ?, ?)";
 	$stmt= $bdd->prepare($sql);
 	$stmt->execute([$id, $blessures, $maladie, $penibilite_physique, $penibilite_mentale]);
 	$count = 0;
@@ -958,7 +958,7 @@ function one_select_risque($id){
     $risques = array();
 	$sql = "SELECT Id_Risques,  etat, date_creation, date_derniere_modification, 
             ip.tous_les_personnels_EN, ip.tous_les_ATTEE, ip.tous_les_eleves,                                /* Personne exposees */ 
-            g.Blessure_graves_ou_deces, g.maladie_mortelle, g.penibilite_physique, g.peniibilite_mentale,	/* Gravite           */
+            g.Blessure_graves_ou_deces, g.maladie_mortelle, g.penibilite_physique, g.penibilite_mentale,	/* Gravite           */
             s.complexite_de_resolution, s.solution_onereuse,                                                 /* Solution          */
             i.name as nomimage, i.image,
             f.famille, f.Id_Famille_de_risque,
@@ -1196,7 +1196,7 @@ function modifier_personne_exposees($personnels, $atte, $eleves, $id){
 
 function modifier_gravite($blessures, $maladie, $penibilite_physique, $penibilite_mentale, $id){
 	require 'connexion.php';
-	$sql = "UPDATE gravite SET Blessure_graves_ou_deces = ?, maladie_mortelle = ?, penibilite_physique = ?, peniibilite_mentale = ? WHERE Id_Gravite = ?";
+	$sql = "UPDATE gravite SET Blessure_graves_ou_deces = ?, maladie_mortelle = ?, penibilite_physique = ?, penibilite_mentale = ? WHERE Id_Gravite = ?";
 	$stmt = $bdd->prepare($sql);
 	$stmt->execute([$blessures, $maladie, $penibilite_physique, $penibilite_mentale, $id]);
     $count = 0;
