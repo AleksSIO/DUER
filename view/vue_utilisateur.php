@@ -61,7 +61,6 @@ session_start();
         </div>
         <div class="text-reception"><p>Boîte de réception</p></div>
         <div class="reception">
-        <form method="post" class="pdf-form" action="../controller/generer_pdf.php">
         <?php 
         require "../model/modele.php";
 
@@ -89,7 +88,6 @@ session_start();
         <?php
         }}
         ?>
-    </form>
         </div>
         </div>
     </div>

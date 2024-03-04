@@ -2,7 +2,7 @@
 
 session_start();
 // Inclure FPDF
-require_once('../vendor/fpdf/fpdf.php');
+require_once('../vendor/autoload.php');
 
 // Inclure le modèle
 require_once('../model/modele.php');
@@ -13,27 +13,9 @@ function genererPDF($id_risque) {
     $risque = recuperer_infos_risque_par_id($id_risque);
 
     // Créer une instance FPDF
-    $pdf = new FPDF();
-    $pdf->AddPage();
-
-    // Écrire le contenu dans le PDF
-    $pdf->SetFont('Arial', 'B', 12);
-    $pdf->Cell(0, 10, 'Informations du risque', 0, 1, 'C');
-    $pdf->Ln(10); // Saut de ligne
-
-    $pdf->SetFont('Arial', '', 10);
-    $pdf->Cell(0, 10, 'Nom : ' . $risque['nom'], 0, 1);
-    $pdf->Cell(0, 10, 'Prenom : ' . $risque['prenom'], 0, 1);
-    $pdf->Cell(0, 10, 'Email : ' . $risque['email'], 0, 1);
-    $pdf->Cell(0, 10, 'Etat : ' . $risque['etat'], 0, 1);
-    $pdf->Cell(0, 10, 'Date de creation : ' . $risque['date_creation'], 0, 1);
-    $pdf->Cell(0, 10, 'Date de derniere modification : ' . $risque['date_derniere_modification'], 0, 1);
-    // Ajoutez d'autres informations du risque selon vos besoins
-
-    // Nommer le fichier PDF et le télécharger
-    $pdf->Output('risque.pdf', 'D');
-
-    // Arrêter l'exécution du script après l'envoi du PDF
+    $mpdf = new \Mpdf\Mpdf(['orientation' => 'L']);
+    $mpdf->WriteHTML('<h1>Hello world!</h1>');
+    $mpdf->Output();
     exit;
 }
 
