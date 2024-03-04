@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Risque</title>
+    <link rel="stylesheet" href="../styles/pdf.css">
 </head>
 <body>
     <div class="bloc-titre">
@@ -14,7 +15,7 @@
         <p>N°</p>
     </div>
     <div class="logo-voillaume">
-        <img>
+        <img src="../assets/logo_voillaume.jpg">
     </div>
     </div>
     <div class="tab-1">
