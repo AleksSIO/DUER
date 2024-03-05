@@ -41,6 +41,8 @@ switch ($mode) {
 			&& empty($probabilite)
 			&& empty($complexiteDeResolution)
 			&& empty($solutionOnereuse)	
+			|| $salle == "Choisir..."
+			|| $FamilleRisque == "Choisir..."
 		)  // le signe && signifie OU
 		{
 			$message_erreur="ATTENTION : Des champs n'ont pas été rempli correctement, veuillez vérifier";

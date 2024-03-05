@@ -44,10 +44,21 @@ function inserer_unite_de_travail($id, $salle)
 {
 	require 'connexion.php';
 
+    $unites = select_unite_de_travail();
+    $exist = false;
+    $count = 0;
+
+    foreach($unites as $unite) {
+        if($unite['salle'] == $salle) {
+            $exist = true;
+            $count = $unite['Id_Unite_de_travail'];
+        }
+    }
+
+    if($exist == false) {
 	$sql = "INSERT INTO unite_de_travail (Id_Unite_de_travail, salle) VALUES (?, ?)";
 	$stmt= $bdd->prepare($sql);
 	$stmt->execute([$id, $salle]);
-	$count = 0;
 
 	if($stmt == false) 
 	{	
@@ -60,8 +71,9 @@ function inserer_unite_de_travail($id, $salle)
 	else // insert réussi
 	{
 		$count = $bdd->lastInsertId(); // compte le nombre de lignes affectées (normalement 1 ligne insérée)
-	}
-	return $count ;
+	} }
+
+	return $count;
 	
 }
 
@@ -222,11 +234,23 @@ function inserer_gravite($id, $blessures, $maladie, $penibilite_physique, $penib
 function inserer_famille_de_risque($id, $famille)
 {
 	require 'connexion.php';
-	
+
+    $familles = select_famille_de_risque();
+    $exist = false;
+    $count = 0;
+
+    foreach($familles as $famille){
+        if($famille['famille'] == $famille){
+            $exist = true;
+            $count = $famille['Id_Famille_de_risque'];
+        }
+    }
+
+
+	if($exist == false){
 	$sql = "INSERT INTO famille_de_risque (Id_Famille_de_risque, famille) VALUES (?, ?)";
 	$stmt= $bdd->prepare($sql);
 	$stmt->execute([$id, $famille]);
-	$count = 0;
 
 	if($stmt == false) 
 	{	
@@ -239,7 +263,7 @@ function inserer_famille_de_risque($id, $famille)
 	else // insert réussi
 	{
 		$count = $bdd->lastInsertId(); // compte le nombre de lignes affectées (normalement 1 ligne insérée)
-	}
+	} }
 	return $count;
 	
 }
@@ -692,12 +716,16 @@ function select_risques(){
 
 function recuperer_infos_risque_par_id($id_risque){
     require 'connexion.php';
-    $sql = "SELECT Id_Risques, etat, date_creation,
-            date_derniere_modification, u.nom, u.prenom,
-            u.email
+    $sql = "SELECT r.Id_Risques, r.etat, r.date_creation,
+            r.date_derniere_modification, u.nom, u.prenom,
+            u.email, ph.nom, ph.photos,
             FROM risques r
             INNER JOIN utilisateur u
             ON r.Id_Utilisateur = u.Id_Utilisateur
+            INNER JOIN photos ph
+            ON r.Id_Photos = ph.Id_Photos
+            INNER JOIN unite_de_travail ut
+            ON r.Id_Unite de travail = 
             WHERE Id_Risques = :risque";
     
     $stmt = $bdd->prepare($sql);
