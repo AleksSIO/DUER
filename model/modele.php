@@ -717,15 +717,33 @@ function select_risques(){
 function recuperer_infos_risque_par_id($id_risque){
     require 'connexion.php';
     $sql = "SELECT r.Id_Risques, r.etat, r.date_creation,
-            r.date_derniere_modification, u.nom, u.prenom,
-            u.email, ph.nom, ph.photos,
+            r.date_derniere_modification, r.total_evaluation, u.nom, u.prenom,
+            u.email, ph.photos, si.precis, pr.probabilite,
+            ut.salle, f.famille, l.emplacement_precis, pe.tous_les_personnels_EN,
+            pe.tous_les_ATTEE, pe.tous_les_eleves, gr.Blessure_graves_ou_deces,
+            gr.maladie_mortelle, gr.penibilite_physique, gr.penibilite_mentale,
+            so.complexite_de_resolution, so.solution_onereuse
             FROM risques r
             INNER JOIN utilisateur u
             ON r.Id_Utilisateur = u.Id_Utilisateur
             INNER JOIN photos ph
             ON r.Id_Photos = ph.Id_Photos
             INNER JOIN unite_de_travail ut
-            ON r.Id_Unite de travail = 
+            ON r.Id_Unite_de_travail = ut.Id_Unite_de_travail
+            INNER JOIN situation_dangereuse si
+            ON r.Id_Situation_dangereuse = si.Id_Situation_dangereuse
+            INNER JOIN probabilite pr
+            ON r.Id_Probabilite = pr.Id_Probabilite
+            INNER JOIN famille_de_risque f
+            ON r.Id_Famille_de_risque = f.Id_Famille_de_risque
+            INNER JOIN localisation l
+            ON r.Id_Localisation = l.Id_Localisation
+            INNER JOIN personne_exposees pe
+            ON r.Id_personne_exposees = pe.Id_personne_exposees
+            INNER JOIN gravite gr
+            ON r.Id_Gravite = gr.Id_Gravite
+            INNER JOIN solution_de_la_situation so
+            ON r.Id_solution_de_la_situation = so.Id_solution_de_la_situation
             WHERE Id_Risques = :risque";
     
     $stmt = $bdd->prepare($sql);
