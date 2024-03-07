@@ -714,6 +714,32 @@ function select_risques(){
     return $risques;
 }
 
+function liste_risques(){
+	require 'connexion.php';
+    $risques = array();
+	$sql = "SELECT *
+            FROM risques 
+            ORDER BY date_creation DESC;";
+	$stmt = $bdd->prepare($sql);
+	$stmt->execute();
+    $risques = $stmt->fetchAll();
+    $count = 0;
+
+    if($stmt == false)
+    {
+        $message_erreur="Impossible d'executer la requete: $sql " ;
+        echo $message_erreur;
+        die();
+        header("Location:../view/vue_erreur.php?erreur=$message_erreur"); // page d'affichage d'erreur
+        exit(); // interruption de la fonction après redirection
+    }
+    else // insert réussi
+    {
+        $count = $stmt->rowCount(); // compte le nombre de lignes affectées (normalement 1 ligne insérée)
+    }
+    return $risques;
+}
+
 function recuperer_infos_risque_par_id($id_risque){
     require 'connexion.php';
     $sql = "SELECT r.Id_Risques, r.etat, r.date_creation,
