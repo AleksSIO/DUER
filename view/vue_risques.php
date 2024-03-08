@@ -109,5 +109,6 @@ session_start();
             </table>
         </div>
     </div>
+    <script src="../scripts/edit_cell.js" defer></script>
 </body>
 </html>
