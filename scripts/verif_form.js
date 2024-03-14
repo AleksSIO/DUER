@@ -1,7 +1,7 @@
-const regexNom = /^[A-Z]+$/;
-const regexPrenom = /^[A-Z][a-z]*$/;
+const regexNom = /^(?=.*[A-ZÀ-ÖØ-Ý])[A-ZÀ-ÖØ-Ý][A-ZÀ-ÖØ-Ý]*(-[A-ZÀ-ÖØ-Ý][A-ZÀ-ÖØ-Ý]*)*$/;
+const regexPrenom = /^[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿ]*(-[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿ]*)*$/;
 const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const regexText = /^[A-Z][a-z]*$/;
+const regexText = /^[A-Za-zÀ-ÖØ-öø-ÿ][a-zA-ZÀ-ÖØ-öø-ÿ\s]+$/;
 
 const input_nom = document.querySelector('#nom');
 const input_prenom = document.querySelector('#prenom');

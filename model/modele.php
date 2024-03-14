@@ -239,10 +239,10 @@ function inserer_famille_de_risque($id, $famille)
     $exist = false;
     $count = 0;
 
-    foreach($familles as $famille){
-        if($famille['famille'] == $famille){
+    foreach($familles as $f){
+        if($f['famille'] == $famille){
             $exist = true;
-            $count = $famille['Id_Famille_de_risque'];
+            $count = $f['Id_Famille_de_risque'];
         }
     }
 
@@ -350,7 +350,10 @@ function inserer_risque( $etat,
 	}
 	else // insert réussi
 	{
-		$count = $stmt->rowCount(); // compte le nombre de lignes affectées (normalement 1 ligne insérée)
+		$count = $stmt->rowCount();
+        $id = $bdd->lastInsertId();
+        $stmt2 = $bdd->prepare("CALL calculer_total_evaluation(?,?,?,?,?)");
+        $stmt2->execute([$id, $Id_personne_exposees, $Id_gravite, $Id_Probabilite, $Id_solution_de_la_situation]);
 	}
 	return $count ;
 
@@ -567,7 +570,7 @@ function select_famille_de_risque(){
 	require 'connexion.php';
     $famille_de_risque = array();
 
-	$sql = "SELECT * FROM famille_de_risque";
+	$sql = "SELECT * FROM famille_de_risque ORDER BY famille ASC";
 	$stmt = $bdd->prepare($sql);
 	$stmt->execute();
     $famille_de_risque = $stmt->fetchAll();
